@@ -7,6 +7,6 @@
 <title>confirmation</title>
 </head>
 <body>
-
+Thank you for ordering! It will be shipped to you in 4 billion years
 </body>
 </html>

@@ -2,20 +2,29 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="baseURL" value="${pageContext.request.localName}"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>payment entry</title>
-<servlet-mapping>
-	<servlet-name>purchase</servlet-name>
-	<url-pattern>/purchase</url-pattern>
-	</servlet-mapping>
+
 </head>
 <body>
-	Hello
-	<form action="/purchase" method = "post">
+
+<form:form modelAttribute="payment" method="post" action="submitPayment">
+
+
 	
-	</form>
+	Exp date:
+	<form:input path = "expDate" /><br>
+	Cvv code:
+	<form:input path = "cvvCode" /><br>
+	Cardholder name:
+	<form:input path = "cardholderName" /><br>
+	
+	<input type="submit" value="Confirm">
+	
+</form:form>
 </body>
 </html>
