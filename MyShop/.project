@@ -3,6 +3,7 @@
 	<name>MyShop</name>
 	<comment></comment>
 	<projects>
+		<project>MyShop-EJBClient</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
