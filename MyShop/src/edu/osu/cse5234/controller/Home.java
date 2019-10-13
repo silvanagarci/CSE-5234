@@ -23,5 +23,9 @@ public class Home {
 	public String viewContactUsPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		return "ContactUs";
 	}
+	@RequestMapping(path = "AboutUs", method = RequestMethod.GET)
+	public String viewAboutUsPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		return "AboutUs";
+	}
 
 }
