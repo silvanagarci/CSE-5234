@@ -27,5 +27,6 @@ public class Home {
 	public String viewAboutUsPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		return "AboutUs";
 	}
+	
 
 }

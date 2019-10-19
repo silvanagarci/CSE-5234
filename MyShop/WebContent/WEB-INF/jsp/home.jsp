@@ -25,6 +25,7 @@
 </section>
 <p style="text-align: center;">We sell all kinds of merchandise for people of all ages, gender, etc. at a very reasonable price. </p>
 </body>
+<a href="MyShop/purchase">Purchase items</a>
 </html>
 
 <%@ include file="Footer.jsp" %>

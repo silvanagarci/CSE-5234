@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>MyShop-EJBEAR</name>
+	<name>MyShop-InventoryManagement-EJBEAR</name>
 	<comment></comment>
 	<projects>
-		<project>MyShop-EJBClient</project>
 		<project>MyShop-InventoryManagement-EJB</project>
+		<project>MyShop-InventoryManagement-EJBClient</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

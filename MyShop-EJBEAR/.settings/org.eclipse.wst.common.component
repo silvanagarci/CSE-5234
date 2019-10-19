@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="MyShop-EJBEAR">
+    <wb-module deploy-name="MyShop-InventoryManagement-EJBEAR">
         <wb-resource deploy-path="/" source-path="/" tag="defaultRootSource"/>
-        <dependent-module archiveName="MyShop-EJBClient.jar" deploy-path="/" handle="module:/resource/MyShop-EJBClient/MyShop-EJBClient">
-            <dependency-type>uses</dependency-type>
-        </dependent-module>
         <dependent-module archiveName="MyShop-InventoryManagement-EJB.jar" deploy-path="/" handle="module:/resource/MyShop-InventoryManagement-EJB/MyShop-InventoryManagement-EJB">
             <dependent-object>Module_1570939007033</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="MyShop-InventoryManagement-EJBClient.jar" deploy-path="/lib" handle="module:/resource/MyShop-InventoryManagement-EJBClient/MyShop-InventoryManagement-EJBClient">
             <dependency-type>uses</dependency-type>
         </dependent-module>
     </wb-module>

@@ -17,11 +17,14 @@ public class ServiceLocator {
 	}
 	public static InventoryService getInventoryService() {
 		try {
-			return (InventoryService) InitialContext.doLookup(
-					"java:global/MyGolf-InventoryManagement-EJBEAR/MyShop-InventoryManagement-EJB/InventoryServiceBean!edu.osu.cse5234.business.view.InventoryService");
+			//return (InventoryService) InitialContext.doLookup(
+			//		"java:global/MyShop-InventoryManagement-EJBEAR/MyShop-InventoryManagement-EJB/InventoryServiceBean!edu.osu.cse5234.business.view.InventoryService");
+			return (InventoryService) InitialContext.doLookup("java:global/MyShop/InventoryServiceBean!edu.osu.cse5234.business.view.InventoryService");
 			} catch (NamingException ne) {
-				throw new RuntimeException(ne);
+				throw new RuntimeException(ne); 
 			}
 	}
 
 }
+
+ 

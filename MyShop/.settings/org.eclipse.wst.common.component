@@ -3,7 +3,10 @@
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated"/>
-        <dependent-module archiveName="MyShop-EJBClient.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/MyShop-EJBClient/MyShop-EJBClient">
+        <dependent-module archiveName="MyShop-InventoryManagement-EJBClient.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/MyShop-InventoryManagement-EJBClient/MyShop-InventoryManagement-EJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="MyShop-InventoryManagement-EJB.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/MyShop-InventoryManagement-EJB/MyShop-InventoryManagement-EJB">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <property name="context-root" value="MyShop"/>

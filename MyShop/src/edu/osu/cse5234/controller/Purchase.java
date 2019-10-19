@@ -9,30 +9,46 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import edu.osu.cse5234.business.OrderProcessingServiceBean;
+import edu.osu.cse5234.business.view.InventoryService;
+import edu.osu.cse5234.business.view.Item;
 import edu.osu.cse5234.model.*;
+import edu.osu.cse5234.util.ServiceLocator;
 
 @Controller
-@RequestMapping("/purchase")
+@RequestMapping("/purchase") 
 public class Purchase {
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewOrderEntryPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// ... instantiate and set order object with items to display
-		//
 		
+		
+		List<Item> itemList = ServiceLocator.getInventoryService().getAvailableInventory().getItems();
 		Order order = new Order();
-		List<Item> items = getItemList();
-		order.setItems(items);
+		order.setItems(itemList);
 		request.setAttribute("order", order);
 		
-		return "OrderEntryForm";
+		return "OrderEntryForm"; 
 	}
 
 	@RequestMapping(path = "/submitItems", method = RequestMethod.POST)
 	public String submitItems(@ModelAttribute("order") Order order, HttpServletRequest request) {
 		//Updates with the new quantities. Calculate price here? No?
 		request.getSession().setAttribute("order", order);
-		return "redirect:/purchase/paymentEntry";
-	}
+		
+		OrderProcessingServiceBean bean = new OrderProcessingServiceBean();
+		if (bean.validateItemAvailability(order)) {
+			//valid order
+			return "redirect:/purchase/paymentEntry";
+		} else {
+			//invalid
+			//display message???
+			request.getSession().setAttribute("isInvalid", "Invalid quantity!");
+			return "redirect:/purchase";
+		}
+		
+	} 
 
 	@RequestMapping(path = "/paymentEntry", method = RequestMethod.GET)
 	public String viewPaymentEntryPage(HttpServletRequest request, HttpServletResponse response) {

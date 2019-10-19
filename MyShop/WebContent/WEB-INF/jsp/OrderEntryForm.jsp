@@ -9,7 +9,7 @@
 <title>order entry</title>
 </head>
 <body>
-
+<% request.getSession().getAttribute("isInvalid"); %>
 <form:form modelAttribute="order" method="post" action="purchase/submitItems">
 
 	<table>
