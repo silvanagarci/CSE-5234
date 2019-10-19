@@ -2,8 +2,8 @@
     <wb-module deploy-name="MyShop-InventoryManagement-EJB">
         <wb-resource deploy-path="/" source-path="/ejbModule" tag="defaultRootSource"/>
         <wb-resource deploy-path="/" source-path="/.apt_generated"/>
+        <property name="ClientJARURI" value="MyShop-InventoryManagement-EJBClient.jar"/>
+        <property name="ClientProject" value="MyShop-InventoryManagement-EJBClient"/>
         <property name="java-output-path" value="/MyShop-InventoryManagement-EJB/build/classes"/>
-        <property name="ClientProject" value="MyShop-EJBClient"/>
-        <property name="ClientJARURI" value="MyShop-EJBClient.jar"/>
     </wb-module>
 </project-modules>
